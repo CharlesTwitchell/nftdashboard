@@ -14,5 +14,16 @@
 #    print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+from flask import Flask
 data_one = 23
-print(data_one)
+app = Flask(__name__)
+@app.route("/")
+@app.route("/home")
+
+def Home():
+    return render_template("README.md")
+
+if __name__ == '__main__':
+    app.run(debug= True,port=5001)
+#data_one = 23
+#print(data_one)
